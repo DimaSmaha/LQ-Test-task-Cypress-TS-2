@@ -12,7 +12,7 @@
 - Open VS code terminal and clone repository (git clone https://github.com/DimaSmaha/LQ-Test-task-Cypress-TS)
 - Run in terminal (npm i) to install all you needed
 - Enter (npm run e2e) to finish cypress setup
-- Test files located in cypress>integration (tests>redmine_tests.spec.ts and pageobjects>activity.page.ts,common.page.ts,download.page.ts,forums.page.ts,help.page.ts,home.page.ts,issues.page.ts,login.page.ts,newissue.page.ts,news.page.ts,overview.page.ts,projects.page.ts,register.page.ts,repository.page.ts,resources.page.ts,roadmap.page.ts,searchresults.page.ts)
+- Test files located in cypress>integration(tests>(page_name).spec.ts also redmine_tests.spec.ts as e2e test and pageobjects>(page_name).page.ts)
 #### Expected results: 
 - Tests to be ran successfully
 
