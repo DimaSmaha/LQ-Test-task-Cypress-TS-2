@@ -9,7 +9,7 @@
 ### Install software and check out the project
 - Download and install Node.JS (at least 14.X)(https://nodejs.org/uk/)
 - Install Visual Studio Code (https://code.visualstudio.com/)
-- Open VS code terminal and clone repository (git clone https://github.com/DimaSmaha/LQ-Test-task-Cypress-TS)
+- Open VS code terminal and clone repository (git clone https://github.com/DimaSmaha/LQ-Test-task-Cypress-TS-2)
 - Run in terminal (npm i) to install all you needed
 - Enter (npm run e2e) to finish cypress setup
 - Test files located in cypress>integration(tests>(page_name).spec.ts also redmine_tests.spec.ts as e2e test and pageobjects>(page_name).page.ts)
