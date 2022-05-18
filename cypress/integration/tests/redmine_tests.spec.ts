@@ -81,7 +81,7 @@ describe('Redmine test cases',  function()  {
   it('Check recently added defects',  function()  {
     homePage.clickActivityButton()
     common.clickDefectWord()
-    common.defectDetailsCheck.should('be.visible')
+    common.defectDetails.should('be.visible')
   })
   it('Check Redmine versions implementation',  function()  {
     homePage.clickRoadmapButton()
@@ -135,7 +135,7 @@ describe('Redmine test cases',  function()  {
     homePage.clickRoadmapButton()
     roadmapPage.clickImplementationVersion()
     common.clickDefectWord()
-    common.defectDetailsCheck.should('be.visible')
+    common.defectDetails.should('be.visible')
   })
   it('Increase number of defects shown',  function()  {
     homePage.clickIssuesButton()
@@ -171,7 +171,7 @@ describe('Redmine test cases',  function()  {
     homePage.clickNewsButton()
     newsPage.clickAnyNews()
     newsPage.clickUserThatAddNews()
-    common.profileDetailsPageCheck.should('be.visible')
+    common.profileDetailsPage.should('be.visible')
   })
   it('Check forum topic sorting',  function()  {
     homePage.clickForumButton()

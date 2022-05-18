@@ -7,7 +7,7 @@ class LoginPage{
     get passwordInput(){
         return cy.get('[id="password"]')
     }
-    get loginBtn(){
+    get loginButton(){
         return cy.get('[name="login"]')
     }
     //methods
@@ -17,13 +17,13 @@ class LoginPage{
     fillPassword(password: string){
         this.passwordInput.type(password)
     }
-    clickLogin(){
-        this.loginBtn.click()
+    clickLoginButton(){
+        this.loginButton.click()
     }
     logIntoAccount(username:string, password:string){
         this.fillUsername(username);
         this.fillPassword(password);
-        this.clickLogin()
+        this.clickLoginButton()
     }
     //checks
     get LoggedAsCheck(){

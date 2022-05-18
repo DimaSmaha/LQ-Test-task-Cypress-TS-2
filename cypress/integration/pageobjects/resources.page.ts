@@ -11,6 +11,7 @@ class ResourcesPage{
     get securityVulnerabilityDetails(){
         return cy.contains('CVE')
     }
+    
     //methods
     ClickAnyPlugin(){
         this.anyPlugin.click()

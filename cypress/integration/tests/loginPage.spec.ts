@@ -20,7 +20,7 @@ describe('Redmine test cases',  function()  {
         homePage.clickLoginButton()
         loginPage.fillUsername('Babalen')
         loginPage.fillPassword('qwerty')
-        loginPage.clickLogin()
+        loginPage.clickLoginButton()
         loginPage.LoggedAsCheck.should('be.visible')
     })
 

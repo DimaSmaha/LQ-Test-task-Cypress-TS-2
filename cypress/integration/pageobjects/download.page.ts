@@ -9,7 +9,7 @@ class DownloadPage{
     }
 
     //checks
-    RedmineRepositoryCheck(){
+    get RedmineRepository(){
         return cy.get('[href="/releases/redmine-5.0.0.zip"]')
     }
    

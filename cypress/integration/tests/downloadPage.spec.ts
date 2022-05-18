@@ -18,6 +18,6 @@ describe('Redmine test cases',  function()  {
     xit('Download redmine repository',  function()  {
         homePage.clickRepoVersionButton()
         downloadPage.downloadRepository()
-        downloadPage.RedmineRepositoryCheck().should('be.visible')
+        downloadPage.RedmineRepository.should('be.visible')
     })
   }) 

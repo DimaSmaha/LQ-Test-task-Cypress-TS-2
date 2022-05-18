@@ -24,6 +24,6 @@ describe('Redmine test cases',  function()  {
         homePage.clickNewsButton()
         newsPage.clickAnyNews()
         newsPage.clickUserThatAddNews()
-        common.profileDetailsPageCheck.should('be.visible')
+        common.profileDetailsPage.should('be.visible')
     })
 }) 

@@ -11,7 +11,7 @@ class Common {
       return cy.contains('Defect #')
    }
    
-   //common
+   //common methods
    clickDefectWord(){
    return this.defectWord.click()
    }
@@ -20,10 +20,10 @@ class Common {
    }
    
    //common checks
-   get defectDetailsCheck(){
+   get defectDetails(){
       return cy.get('[class="description"]')
    }
-   get profileDetailsPageCheck(){
+   get profileDetailsPage(){
       return cy.get('[class="splitcontentleft"]')
    }
    get apiDetails(){

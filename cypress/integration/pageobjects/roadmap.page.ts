@@ -9,7 +9,7 @@ class RoadmapPage{
     get FeatureCheckbox(){
         return cy.get('[value="2"][name="tracker_ids[]"]')
     }
-    get  PatchCheckbox(){
+    get PatchCheckbox(){
         return cy.get('[value="3"][name="tracker_ids[]"]')
     }
     get ApplyButton(){

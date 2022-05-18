@@ -24,7 +24,7 @@ describe('Redmine test cases',  function()  {
         homePage.clickRoadmapButton()
         roadmapPage.clickImplementationVersion()
         common.clickDefectWord()
-        common.defectDetailsCheck.should('be.visible')
+        common.defectDetails.should('be.visible')
     })
     it('Check roadmap filtration',  function()  {
         homePage.clickRoadmapButton()

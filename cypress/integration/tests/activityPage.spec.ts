@@ -18,7 +18,7 @@ describe('Redmine test cases',  function()  {
     it('Check recently added defects',  function()  {
         homePage.clickActivityButton()
         common.clickDefectWord()
-        common.defectDetailsCheck.should('be.visible')
+        common.defectDetails.should('be.visible')
     })
     it('Check activity filtration',  function()  {
         homePage.clickActivityButton()
