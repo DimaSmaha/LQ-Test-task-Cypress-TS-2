@@ -12,7 +12,7 @@ class OverviewPage{
 
     //check
     get administratorPage(){
-        return cy.contains("Administrator")
+        return cy.get('[href="/projects/redmine"]')
     }
     
 }

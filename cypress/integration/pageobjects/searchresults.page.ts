@@ -2,7 +2,7 @@ class SearchResultPage{
     
     //objects
     get MessagesFilter(){
-        return cy.contains ('Сообщения')
+        return cy.get('[href="#"]').contains('Сообщения')
     }
     
     //objects

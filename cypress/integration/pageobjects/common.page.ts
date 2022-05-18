@@ -10,13 +10,16 @@ class Common {
    get defectWord(){
       return cy.contains('Defect #')
    }
+   get ApiIssuesGuide(){
+      return cy.get('[class="wiki-page"]').contains("Issues")
+   }
    
    //common methods
    clickDefectWord(){
-   return this.defectWord.click()
+     this.defectWord.click()
    }
    clickApiIssuesGuide(){
-      return cy.get('[class="wiki-page"]').contains("Issues").click()
+      this.ApiIssuesGuide.click()
    }
    
    //common checks

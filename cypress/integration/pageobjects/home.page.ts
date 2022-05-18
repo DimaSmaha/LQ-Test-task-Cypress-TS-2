@@ -1,16 +1,16 @@
 class HomePage{
     //buttons
     get LoginButton(){
-       return cy.get('[class="login"]')
+     return cy.get('[class="login"]')
     }
     get ProjectsButton(){
-        return cy.get('[class="projects"]')
+     return cy.get('[class="projects"]')
     }
     get RegisterButton(){
-        return  cy.get('[class="register"]')
+     return cy.get('[class="register"]')
     }
     get RepoVersionButton(){
-        return cy.contains('5.0.0')
+     return cy.get('[href="/projects/redmine/wiki/Download"]')
     }
     get ActivityButton(){
      return cy.get('[class="activity"]')
@@ -34,16 +34,16 @@ class HomePage{
      return cy.get('[class="new-issue"]')
     }
     get HelpButton(){
-     return cy.contains("User's Guide")
+     return cy.get('[class="help"]')
     }
     get ResourcesPluginsButton(){
      return cy.get ('[href="/plugins"]')
     }
     get ResourcesChangelogButton(){
-     return cy.get('[class="wiki-page"]')
+     return cy.get('[class="wiki-page"]').contains("Changelog")
     }
     get ResourcesSecurityButton(){
-     return cy.get('[class="wiki-page"]')
+     return cy.get('[class="wiki-page"]').contains('Security')
     }
 
     //methods for buttons
@@ -88,10 +88,10 @@ class HomePage{
         this.ResourcesPluginsButton.click()
     }
     clickResourcesChangelogButton(){
-        this.ResourcesChangelogButton.contains("Changelog").click()
+        this.ResourcesChangelogButton.click()
     }
     clickResourcesSecurityButton(){
-        this.ResourcesSecurityButton.contains('Security').click()
+        this.ResourcesSecurityButton.click()
     }
 
     //objects

@@ -3,13 +3,13 @@ class ResourcesPage{
 
     //objects
     get anyPlugin(){
-        return cy.contains('Plugin')
+        return cy.get('a[class="plugin"]').eq(1)
     }
     get changelog5series(){
         return cy.get('[href="/projects/redmine/wiki/Changelog_5_0"]')
     }
     get securityVulnerabilityDetails(){
-        return cy.contains('CVE')
+        return cy.get('[class="external"]').contains('CVE')
     }
     
     //methods
@@ -22,10 +22,10 @@ class ResourcesPage{
    
     //checks
     get pluginDetails(){
-    return cy.contains("Code repository")
+    return cy.get('[class="info"]')
     }
     get changelogDetails(){
-    return cy.contains("Changelog 5.0.x")
+    return cy.get('[class="version"]').eq(0)
     }
 
 }

@@ -2,7 +2,7 @@ class HelpPage{
    
     //objects
     get navigateToTranslation(){
-        return cy.contains('Translations')
+        return cy.get('[href="#Translations-of-the-Redmine-guide"]').eq(0)
     }
     get translateToFrench(){
         return cy.get('[href="/projects/redmine/wiki/FrGuide"]')
@@ -35,7 +35,7 @@ class HelpPage{
         return cy.get('[class="toc right"]')
     }
     get apiDetails(){
-        return cy.contains('[class="toc right"]')
+        return cy.get('[class="toc right"]')
     }
 }
 export default HelpPage

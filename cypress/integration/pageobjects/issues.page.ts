@@ -40,10 +40,10 @@ class IssuesPage{
         return cy.get('[class="tracker"]').contains("Feature")
     }
     get issuesShow50Issues(){
-        return cy.contains("1-50")
+        return cy.get('[class="items"]').contains("1-50")
     }
     get issuesSorting(){
-        return cy.contains("2022-05")
+        return cy.get('[class="sort desc"]')
     }
 }
 export default IssuesPage
