@@ -60,7 +60,7 @@ describe('Redmine test cases',  function()  {
     homePage.clickLoginButton()
     loginPage.fillUsername('Babalen')
     loginPage.fillPassword('qwerty')
-    loginPage.clickLogin()
+    loginPage.clickLoginButton()
     loginPage.LoggedAsCheck.should('be.visible')
   })
   it('Password recover',  function()  {
@@ -71,7 +71,7 @@ describe('Redmine test cases',  function()  {
   xit('Download redmine repository',  function()  {
     homePage.clickRepoVersionButton()
     downloadPage.downloadRepository()
-    downloadPage.RedmineRepositoryCheck().should('be.visible')
+    downloadPage.RedmineRepository.should('be.visible')
   })
   it('Check available projects overview',  function()  {
     homePage.clickProjectsButton()
