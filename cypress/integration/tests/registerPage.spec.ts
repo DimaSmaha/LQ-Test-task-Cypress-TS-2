@@ -5,37 +5,33 @@ import RegisterPage from '../pageobjects/register.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const regPage = new RegisterPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Register page test cases',  function()  {
     //Positive testing
-  it('Register on website',  function()  {
-      homePage.clickRegisterButton()
-      regPage.fillLogin('sonnerandom')
-      regPage.fillPassword('qwerty')
-      regPage.fillPasswordConfirmation('qwerty')
-      regPage.fillFirstName('somename')
-      regPage.fillLastName('somelastname')
-      regPage.fillEmail('soeveryrandommail@gmail.com')
-      regPage.clickSubmitButton()
-      regPage.successfulRegistration.should('be.visible')
+  it('Should register new account',  function()  {
+    HomePage.clickRegisterButton()
+    RegisterPage.fillLogin('sonnerandom')
+    RegisterPage.fillPassword('qwerty')
+    RegisterPage.fillPasswordConfirmation('qwerty')
+    RegisterPage.fillFirstName('somename')
+    RegisterPage.fillLastName('somelastname')
+    RegisterPage.fillEmail('soeveryrandommail@gmail.com')
+    RegisterPage.clickSubmitButton()
+    RegisterPage.successfulRegistration.should('be.visible')
   })
   //Negative testing
-  it('Register without data',  function()  {
-    homePage.clickRegisterButton()
-    regPage.clickSubmitButton()
-    regPage.error.should('be.visible')
+  it('Should show error, while registering without data',  function()  {
+    HomePage.clickRegisterButton()
+    RegisterPage.clickSubmitButton()
+    RegisterPage.error.should('be.visible')
   })
-  it('Register with incorrect email',  function()  {
-    homePage.clickRegisterButton()
-    regPage.fillEmail('someenails')
-    regPage.clickSubmitButton()
-    regPage.error.should('be.visible')
+  it('Should show error, while registering with incorrect email',  function()  {
+    HomePage.clickRegisterButton()
+    RegisterPage.fillEmail('someenails')
+    RegisterPage.clickSubmitButton()
+    RegisterPage.error.should('be.visible')
   })   
   }) 

@@ -16,4 +16,4 @@ class OverviewPage{
     }
     
 }
-export default OverviewPage
+export default new OverviewPage();

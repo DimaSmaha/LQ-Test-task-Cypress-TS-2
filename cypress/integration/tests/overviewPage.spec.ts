@@ -6,21 +6,16 @@ import OverviewPage from '../pageobjects/overview.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const projectPage = new ProjectsPage();
-const overviewPage = new OverviewPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Overview page test cases',  function()  {
     //Positive testing
-    it('Check project administarator profile',  function()  {
-        homePage.clickProjectsButton()
-        projectPage.clickRedmineProjectButton()
-        overviewPage.clickOnProjectAdministrator()
-        overviewPage.administratorPage.should('be.visible')
+    it('Should open project administrator page',  function()  {
+        HomePage.clickProjectsButton()
+        ProjectsPage.clickRedmineProjectButton()
+        OverviewPage.clickOnProjectAdministrator()
+        OverviewPage.administratorPage.should('be.visible')
     })
 }) 

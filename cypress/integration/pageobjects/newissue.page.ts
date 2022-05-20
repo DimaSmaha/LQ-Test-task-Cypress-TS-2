@@ -31,4 +31,4 @@ class NewIssuePage{
     
    
 }
-export default NewIssuePage
+export default new NewIssuePage();

@@ -5,31 +5,27 @@ import IssuesPage from '../pageobjects/issues.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const issuesPage = new IssuesPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Issues page test cases',  function()  {
     //Positive testing
-    it('Check Issues page filtration',  function()  {
-        homePage.clickIssuesButton()
-        issuesPage.addTrackerFilter('tracker_id')
-        issuesPage.chooseTrackerFilter('2')
-        issuesPage.clickApplyButton()
-        issuesPage.issuesFeatureFiltration.should('be.visible')
+    it('Should filtrate Issues page',  function()  {
+        HomePage.clickIssuesButton()
+        IssuesPage.addTrackerFilter('tracker_id')
+        IssuesPage.chooseTrackerFilter('2')
+        IssuesPage.clickApplyButton()
+        IssuesPage.issuesFeatureFiltration.should('be.visible')
     })
-    it('Increase number of defects shown',  function()  {
-        homePage.clickIssuesButton()
-        issuesPage.clickShow50Issues()
-        issuesPage.issuesShow50Issues.should('be.visible')
+    it('Should increase list of defects shown on Issues page',  function()  {
+        HomePage.clickIssuesButton()
+        IssuesPage.clickShow50Issues()
+        IssuesPage.issuesShow50Issues.should('be.visible')
     })
-    it('Check issues page sorting',  function()  {
-        homePage.clickIssuesButton()
-        issuesPage.clickSortByDate()
-        issuesPage.issuesSorting.should('be.visible')
+    it('Should sort Issues page',  function()  {
+        HomePage.clickIssuesButton()
+        IssuesPage.clickSortByDate()
+        IssuesPage.issuesSorting.should('be.visible')
       })
 }) 

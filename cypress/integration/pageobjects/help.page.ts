@@ -13,7 +13,6 @@ class HelpPage{
     get RedmineRestApi(){
         return cy.get('[href="/projects/redmine/wiki/Rest_api"]')
     }
-  
 
     //methods
     clickNavigateToTranslation(){
@@ -38,4 +37,4 @@ class HelpPage{
         return cy.get('[class="toc right"]')
     }
 }
-export default HelpPage
+export default new HelpPage();

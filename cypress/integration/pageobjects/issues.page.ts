@@ -46,4 +46,4 @@ class IssuesPage{
         return cy.get('[class="sort desc"]')
     }
 }
-export default IssuesPage
+export default new IssuesPage();

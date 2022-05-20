@@ -62,4 +62,4 @@ class LoginPage{
     return cy.get('[id="flash_notice"]')
     }
 }
-    export default LoginPage
+    export default new LoginPage();

@@ -2,33 +2,27 @@ import Common from '../pageobjects/common.page'
 import HomePage from '../pageobjects/home.page'
 import ResourcesPage from '../pageobjects/resources.page'
 
-
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const resourcesPage = new ResourcesPage();
-
-
 beforeEach(() => {
-  common.GoToPage()
-})
+  Common.GoToPage()
+  })
 
-describe('Redmine test cases',  function()  {
+describe('Resources page test cases',  function()  {
   //Positive testing
-  it('Сheck redmine plugin details',  function()  {
-    homePage.clickResourcesPluginsButton()
-    resourcesPage.ClickAnyPlugin()
-    resourcesPage.pluginDetails.should('be.visible')
+  it('Should open Redmine plugin details',  function()  {
+    HomePage.clickResourcesPluginsButton()
+    ResourcesPage.ClickAnyPlugin()
+    ResourcesPage.pluginDetails.should('be.visible')
   })
-  it('Check Changelog details by version',  function()  {
-    homePage.clickResourcesChangelogButton()
-    resourcesPage.ClickOnChangelog5series()
-    resourcesPage.changelogDetails.should('be.visible')
+  it('Should open changelog details by version',  function()  {
+    HomePage.clickResourcesChangelogButton()
+    ResourcesPage.ClickOnChangelog5series()
+    ResourcesPage.changelogDetails.should('be.visible')
   })
-  it('Сheck security vulnerability details',  function()  {
-    homePage.clickResourcesSecurityButton()
-    resourcesPage.securityVulnerabilityDetails.should('be.visible')
+  it('Should open security vulnerability details',  function()  {
+    HomePage.clickResourcesSecurityButton()
+    ResourcesPage.securityVulnerabilityDetails.should('be.visible')
   })
 })

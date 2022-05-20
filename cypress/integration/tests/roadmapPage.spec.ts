@@ -5,32 +5,28 @@ import RoadmapPage from '../pageobjects/roadmap.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const roadmapPage = new RoadmapPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Roadmap page test cases',  function()  {
     //Positive testing
-    it('Check Redmine versions implementation',  function()  {
-        homePage.clickRoadmapButton()
-        roadmapPage.clickImplementationVersion()
-        roadmapPage.roadmapDetails.should('be.visible')
+    it('Should open version implementation details',  function()  {
+        HomePage.clickRoadmapButton()
+        RoadmapPage.clickImplementationVersion()
+        RoadmapPage.roadmapDetails.should('be.visible')
     })
-    it('Check defect details through roadmap',  function()  {
-        homePage.clickRoadmapButton()
-        roadmapPage.clickImplementationVersion()
-        common.clickDefectWord()
-        common.defectDetails.should('be.visible')
+    it('Should open defect details thorough roadmap page',  function()  {
+        HomePage.clickRoadmapButton()
+        RoadmapPage.clickImplementationVersion()
+        Common.clickDefectWord()
+        Common.defectDetails.should('be.visible')
     })
-    it('Check roadmap filtration',  function()  {
-        homePage.clickRoadmapButton()
-        roadmapPage.uncheckDefectCheckbox()
-        roadmapPage.uncheckFeatureCheckbox()
-        roadmapPage.clickApplyButton()
-        roadmapPage.roadmapPatchesFiltration.should('be.visible')
+    it('Should filtrate Roadmap page',  function()  {
+        HomePage.clickRoadmapButton()
+        RoadmapPage.uncheckDefectCheckbox()
+        RoadmapPage.uncheckFeatureCheckbox()
+        RoadmapPage.clickApplyButton()
+        RoadmapPage.roadmapPatchesFiltration.should('be.visible')
     })
 }) 

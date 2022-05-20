@@ -43,4 +43,4 @@ class RoadmapPage{
     }
     
 }
-export default RoadmapPage
+export default new RoadmapPage();

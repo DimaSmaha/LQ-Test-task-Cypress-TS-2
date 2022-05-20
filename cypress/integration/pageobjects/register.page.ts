@@ -65,4 +65,4 @@ get error(){
 
 }
 
-export default RegisterPage
+export default new RegisterPage();

@@ -5,25 +5,21 @@ import NewsPage from '../pageobjects/news.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const newsPage = new NewsPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('News page test cases',  function()  {
     //Positive testing
-    it('Check news page',  function()  {
-        homePage.clickNewsButton()
-        newsPage.clickAnyNews()
-        newsPage.newsDetails.should('be.visible')
+    it('Should open news details',  function()  {
+        HomePage.clickNewsButton()
+        NewsPage.clickAnyNews()
+        NewsPage.newsDetails.should('be.visible')
     })
-    it('Check profile details of user that added news',  function()  {
-        homePage.clickNewsButton()
-        newsPage.clickAnyNews()
-        newsPage.clickUserThatAddNews()
-        common.profileDetailsPage.should('be.visible')
+    it('Should open profile page of user that add news',  function()  {
+        HomePage.clickNewsButton()
+        NewsPage.clickAnyNews()
+        NewsPage.clickUserThatAddNews()
+        Common.profileDetailsPage.should('be.visible')
     })
 }) 

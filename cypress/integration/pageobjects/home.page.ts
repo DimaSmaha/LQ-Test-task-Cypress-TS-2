@@ -34,7 +34,7 @@ class HomePage{
      return cy.get('[class="new-issue"]')
     }
     get HelpButton(){
-     return cy.get('[class="help"]')
+     return cy.get('[href="/projects/redmine/wiki/Guide"]').eq(0)
     }
     get ResourcesPluginsButton(){
      return cy.get ('[href="/plugins"]')
@@ -118,6 +118,6 @@ class HomePage{
     
 
 }
-export default HomePage
+export default new HomePage();
 
 

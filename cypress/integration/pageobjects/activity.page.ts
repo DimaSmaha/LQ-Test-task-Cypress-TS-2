@@ -10,9 +10,9 @@ class ActivityPage{
     }
 
     //checks
-    get onlyIssuesShownCheck(){
+    get onlyIssuesShown(){
         return cy.get('[checked="checked"][value="1"][name="show_issues"]')
     }
     
 }
-export default ActivityPage
+export default new ActivityPage();

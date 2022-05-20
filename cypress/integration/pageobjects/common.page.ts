@@ -39,4 +39,4 @@ class Common {
 
  }
             
-export default Common
+export default new Common();

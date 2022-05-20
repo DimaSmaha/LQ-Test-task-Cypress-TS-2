@@ -34,4 +34,4 @@ class ForumsPage{
     }
    
 }
-export default ForumsPage
+export default new ForumsPage();

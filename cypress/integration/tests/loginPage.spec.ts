@@ -5,29 +5,25 @@ import LoginPage from '..//pageobjects/login.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const loginPage = new LoginPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Login page test cases',  function()  {
    //Positive testing
 
-    it('Sign in on website',  function()  {
-        homePage.clickLoginButton()
-        loginPage.fillUsername('Babalen')
-        loginPage.fillPassword('qwerty')
-        loginPage.clickLoginButton()
-        loginPage.LoggedAsCheck.should('be.visible')
+    it('Should sing in to the website',  function()  {
+        HomePage.clickLoginButton()
+        LoginPage.fillUsername('Babalen')
+        LoginPage.fillPassword('qwerty')
+        LoginPage.clickLoginButton()
+        LoginPage.LoggedAsCheck.should('be.visible')
     })
 
-    it('Password recover',  function()  {
-        homePage.clickLoginButton()
-        loginPage.lostPasswordRecover('babalen253@cupbest.com')
-        loginPage.successfulRecoverPasswordNoticeCheck.should('be.visible')
+    it('Should recover the password',  function()  {
+        HomePage.clickLoginButton()
+        LoginPage.lostPasswordRecover('babalen253@cupbest.com')
+        LoginPage.successfulRecoverPasswordNoticeCheck.should('be.visible')
     })
     
   }) 

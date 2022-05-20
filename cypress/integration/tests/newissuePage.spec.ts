@@ -6,22 +6,17 @@ import NewIssuePage from '../pageobjects/newissue.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const newissuePage = new NewIssuePage();
-const loginPage = new LoginPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('New issues page test cases',  function()  {
     //Positive testing
-    it('Add new issue',  function()  {
-        homePage.clickLoginButton()
-        loginPage.logIntoAccount('Babalen','qwerty')
-        homePage.clickNewIssueButton()
-        newissuePage.makeNewIssue('something bad happened','something very bad happened')
-        newissuePage.issuePreview.should('be.visible')
+    it('Should add new issue',  function()  {
+        HomePage.clickLoginButton()
+        LoginPage.logIntoAccount('Babalen','qwerty')
+        HomePage.clickNewIssueButton()
+        NewIssuePage.makeNewIssue('something bad happened','something very bad happened')
+        NewIssuePage.issuePreview.should('be.visible')
       })
 }) 

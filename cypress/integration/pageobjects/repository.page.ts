@@ -6,4 +6,4 @@ class RepositoryPage{
     }
     
 }
-export default RepositoryPage
+export default new RepositoryPage();

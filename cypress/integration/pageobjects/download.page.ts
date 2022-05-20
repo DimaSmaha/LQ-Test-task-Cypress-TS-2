@@ -14,4 +14,4 @@ class DownloadPage{
     }
    
 }
-export default DownloadPage
+export default new DownloadPage();

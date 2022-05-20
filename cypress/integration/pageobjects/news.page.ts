@@ -23,4 +23,4 @@ class NewsPage{
     
    
 }
-export default NewsPage
+export default new NewsPage();

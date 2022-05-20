@@ -29,4 +29,4 @@ class ResourcesPage{
     }
 
 }
-export default ResourcesPage
+export default new ResourcesPage();

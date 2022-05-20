@@ -15,4 +15,4 @@ class ProjectsPage{
     }
    
 }
-export default ProjectsPage
+export default new ProjectsPage();

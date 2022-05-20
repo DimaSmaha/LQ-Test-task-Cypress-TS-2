@@ -5,27 +5,23 @@ import HelpPage from '../pageobjects/help.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const helpPage = new HelpPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Help page test cases',  function()  {
     //Positive testing
-    it('Change Redmine guide language',  function()  {
-        homePage.clickHelpButton()
-        helpPage.clickNavigateToTranslation()
-        helpPage.clickTranslateToFrench()
-        helpPage.redmineGuideTranslation.should('be.visible')
+    it('Should change redmine guide language',  function()  {
+        HomePage.clickHelpButton()
+        HelpPage.clickNavigateToTranslation()
+        HelpPage.clickTranslateToFrench()
+        HelpPage.redmineGuideTranslation.should('be.visible')
     })
-    it('Check API guide',  function()  {
-        homePage.clickHelpButton()
-        helpPage.scrollToDeveloperGuide()
-        helpPage.clickRedmineRestApi()
-        common.clickApiIssuesGuide()
-        common.apiDetails.should('be.visible')
+    it('Should open API guide details',  function()  {
+        HomePage.clickHelpButton()
+        HelpPage.scrollToDeveloperGuide()
+        HelpPage.clickRedmineRestApi()
+        Common.clickApiIssuesGuide()
+        Common.apiDetails.should('be.visible')
       })
 }) 

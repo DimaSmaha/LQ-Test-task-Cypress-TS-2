@@ -5,19 +5,15 @@ import DownloadPage from '../pageobjects/download.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const downloadPage = new DownloadPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Download page test cases',  function()  {
     //Positive testing
-    xit('Download redmine repository',  function()  {
-        homePage.clickRepoVersionButton()
-        downloadPage.downloadRepository()
-        downloadPage.RedmineRepository.should('be.visible')
+    xit('Should download redmine repository',  function()  {
+        HomePage.clickRepoVersionButton()
+        DownloadPage.downloadRepository()
+        DownloadPage.RedmineRepository.should('be.visible')
     })
   }) 

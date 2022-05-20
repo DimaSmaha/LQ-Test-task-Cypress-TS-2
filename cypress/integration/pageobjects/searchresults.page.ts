@@ -16,4 +16,4 @@ class SearchResultPage{
     }
 
 }  
-export default SearchResultPage
+export default new SearchResultPage();

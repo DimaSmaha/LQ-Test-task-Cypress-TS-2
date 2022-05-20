@@ -5,24 +5,20 @@ import ActivityPage from '../pageobjects/activity.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const activityPage = new ActivityPage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Activity test cases',  function()  {
     //Positive testing
-    it('Check recently added defects',  function()  {
-        homePage.clickActivityButton()
-        common.clickDefectWord()
-        common.defectDetails.should('be.visible')
+    it('Should open recently added defect details',  function()  {
+        HomePage.clickActivityButton()
+        Common.clickDefectWord()
+        Common.defectDetails.should('be.visible')
     })
-    it('Check activity filtration',  function()  {
-        homePage.clickActivityButton()
-        activityPage.clickOnFilterByIssue()
-        activityPage.onlyIssuesShownCheck.should('be.visible')
+    it('Should filtrate Activity page',  function()  {
+        HomePage.clickActivityButton()
+        ActivityPage.clickOnFilterByIssue()
+        ActivityPage.onlyIssuesShown.should('be.visible')
     })
 }) 

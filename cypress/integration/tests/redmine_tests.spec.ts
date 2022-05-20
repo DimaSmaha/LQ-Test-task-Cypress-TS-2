@@ -1,4 +1,4 @@
-import Common from '../pageobjects/common.page'
+import Common from '../pageobjects/Common.page'
 import HomePage from '../pageobjects/home.page'
 import RegisterPage from '../pageobjects/register.page'
 import LoginPage from '..//pageobjects/login.page'
@@ -16,210 +16,190 @@ import RepositoryPage from '../pageobjects/repository.page'
 import SearchResultPage from '../pageobjects/searchresults.page'
 import ResourcesPage from '../pageobjects/resources.page'
 
-
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-const regPage = new RegisterPage();
-const loginPage = new LoginPage();
-const projectPage = new ProjectsPage();
-const helpPage = new HelpPage();
-const overviewPage = new OverviewPage();
-const downloadPage = new DownloadPage();
-const activityPage = new ActivityPage();
-const roadmapPage = new RoadmapPage();
-const issuesPage = new IssuesPage();
-const newissuePage = new NewIssuePage();
-const newsPage = new NewsPage();
-const forumsPage = new ForumsPage();
-const repositoryPage = new RepositoryPage();
-const searchresPage = new SearchResultPage();
-const resourcesPage = new ResourcesPage();
-
-
 beforeEach(() => {
-  common.GoToPage()
+  Common.GoToPage()
 })
 
-describe('Redmine test cases',  function()  {
+describe('All Redmine test cases',  function()  {
   //Positive testing
-  xit('Register on website',  function()  {
-    homePage.clickRegisterButton()
-    regPage.fillLogin('sonnerandom')
-    regPage.fillPassword('qwerty')
-    regPage.fillPasswordConfirmation('qwerty')
-    regPage.fillFirstName('somename')
-    regPage.fillLastName('somelastname')
-    regPage.fillEmail('soeveryrandommail@gmail.com')
-    regPage.clickSubmitButton()
-    regPage.successfulRegistration.should('be.visible')
+  xit('Should register new account',  function()  {
+    HomePage.clickRegisterButton()
+    RegisterPage.fillLogin('sonnerandom')
+    RegisterPage.fillPassword('qwerty')
+    RegisterPage.fillPasswordConfirmation('qwerty')
+    RegisterPage.fillFirstName('somename')
+    RegisterPage.fillLastName('somelastname')
+    RegisterPage.fillEmail('soeveryrandommail@gmail.com')
+    RegisterPage.clickSubmitButton()
+    RegisterPage.successfulRegistration.should('be.visible')
   })
-  it('Sign in on website',  function()  {
-    homePage.clickLoginButton()
-    loginPage.fillUsername('Babalen')
-    loginPage.fillPassword('qwerty')
-    loginPage.clickLoginButton()
-    loginPage.LoggedAsCheck.should('be.visible')
+  it('Should sing in to the website',  function()  {
+    HomePage.clickLoginButton()
+    LoginPage.fillUsername('Babalen')
+    LoginPage.fillPassword('qwerty')
+    LoginPage.clickLoginButton()
+    LoginPage.LoggedAsCheck.should('be.visible')
   })
-  it('Password recover',  function()  {
-    homePage.clickLoginButton()
-    loginPage.lostPasswordRecover('babalen253@cupbest.com')
-    loginPage.successfulRecoverPasswordNoticeCheck.should('be.visible')
+  it('Should recover the password',  function()  {
+    HomePage.clickLoginButton()
+    LoginPage.lostPasswordRecover('babalen253@cupbest.com')
+    LoginPage.successfulRecoverPasswordNoticeCheck.should('be.visible')
   })
-  xit('Download redmine repository',  function()  {
-    homePage.clickRepoVersionButton()
-    downloadPage.downloadRepository()
-    downloadPage.RedmineRepository.should('be.visible')
+  xit('Should download redmine repository',  function()  {
+    HomePage.clickRepoVersionButton()
+    DownloadPage.downloadRepository()
+    DownloadPage.RedmineRepository.should('be.visible')
   })
-  it('Check available projects overview',  function()  {
-    homePage.clickProjectsButton()
-    projectPage.clickRedmineProjectButton()
-    projectPage.redmineProject.should('be.visible')
+  it('Should open available project overview',  function()  {
+    HomePage.clickProjectsButton()
+    ProjectsPage.clickRedmineProjectButton()
+    ProjectsPage.redmineProject.should('be.visible')
   })
-  it('Check recently added defects',  function()  {
-    homePage.clickActivityButton()
-    common.clickDefectWord()
-    common.defectDetails.should('be.visible')
+  it('Should open recently added defect details',  function()  {
+    HomePage.clickActivityButton()
+    Common.clickDefectWord()
+    Common.defectDetails.should('be.visible')
   })
-  it('Check Redmine versions implementation',  function()  {
-    homePage.clickRoadmapButton()
-    roadmapPage.clickImplementationVersion()
-    roadmapPage.roadmapDetails.should('be.visible')
+  it('Should open version implementation details',  function()  {
+    HomePage.clickRoadmapButton()
+    RoadmapPage.clickImplementationVersion()
+    RoadmapPage.roadmapDetails.should('be.visible')
   })
-  it('Check Issues page filtration',  function()  {
-    homePage.clickIssuesButton()
-    issuesPage.addTrackerFilter('tracker_id')
-    issuesPage.chooseTrackerFilter('2')
-    issuesPage.clickApplyButton()
-    issuesPage.issuesFeatureFiltration.should('be.visible')
+  it('Should filtrate Issues page',  function()  {
+    HomePage.clickIssuesButton()
+    IssuesPage.addTrackerFilter('tracker_id')
+    IssuesPage.chooseTrackerFilter('2')
+    IssuesPage.clickApplyButton()
+    IssuesPage.issuesFeatureFiltration.should('be.visible')
   })
-  it('Add new issue',  function()  {
-    homePage.clickLoginButton()
-    loginPage.logIntoAccount('Babalen','qwerty')
-    homePage.clickNewIssueButton()
-    newissuePage.makeNewIssue('something bad happened','something very bad happened')
-    newissuePage.issuePreview.should('be.visible')
+  it('Should add new issue',  function()  {
+    HomePage.clickLoginButton()
+    LoginPage.logIntoAccount('Babalen','qwerty')
+    HomePage.clickNewIssueButton()
+    NewIssuePage.makeNewIssue('something bad happened','something very bad happened')
+    NewIssuePage.issuePreview.should('be.visible')
   })
-  it('Check news page',  function()  {
-    homePage.clickNewsButton()
-    newsPage.clickAnyNews()
-    newsPage.newsDetails.should('be.visible')
+  it('Should open news details',  function()  {
+    HomePage.clickNewsButton()
+    NewsPage.clickAnyNews()
+    NewsPage.newsDetails.should('be.visible')
   })
-  it('Check forums page',  function()  {
-    homePage.clickForumButton()
-    forumsPage.clickHelpTopic()
-    forumsPage.forumsHelpTopic.should('be.visible')
+  it('Should open forums topic page',  function()  {
+    HomePage.clickForumButton()
+    ForumsPage.clickHelpTopic()
+    ForumsPage.forumsHelpTopic.should('be.visible')
   })
-  it('Check repository page',  function()  {
-    homePage.clickRepoButton()
-    repositoryPage.repositoryPage.should('be.visible')
+  it('Should open repository page',  function()  {
+    HomePage.clickRepoButton()
+    RepositoryPage.repositoryPage.should('be.visible')
   })
-  it('Change Redmine guide language',  function()  {
-    homePage.clickHelpButton()
-    helpPage.clickNavigateToTranslation()
-    helpPage.clickTranslateToFrench()
-    helpPage.redmineGuideTranslation.should('be.visible')
+  it('Should change redmine guide language',  function()  {
+    HomePage.clickHelpButton()
+    HelpPage.clickNavigateToTranslation()
+    HelpPage.clickTranslateToFrench()
+    HelpPage.redmineGuideTranslation.should('be.visible')
   })
-  it('Check search filtation',  function()  {
-    homePage.useSearchInput('defect{enter}')
-    searchresPage.clickMessagesFilter()
-    searchresPage.searchFiltration.should('be.visible')
+  it('Should filtrate search results',  function()  {
+    HomePage.useSearchInput('defect{enter}')
+    SearchResultPage.clickMessagesFilter()
+    SearchResultPage.searchFiltration.should('be.visible')
   })
-  it('Buy redmine book',  function()  {
+  it('Should navigate to Redmine book product page',  function()  {
     cy.scrollTo('bottom')
-    homePage.bookImage.should('be.visible')
+    HomePage.bookImage.should('be.visible')
   })
-  it('Check defect details through roadmap',  function()  {
-    homePage.clickRoadmapButton()
-    roadmapPage.clickImplementationVersion()
-    common.clickDefectWord()
-    common.defectDetails.should('be.visible')
+  it('Should open defect details thorough roadmap page',  function()  {
+    HomePage.clickRoadmapButton()
+    RoadmapPage.clickImplementationVersion()
+    Common.clickDefectWord()
+    Common.defectDetails.should('be.visible')
   })
-  it('Increase number of defects shown',  function()  {
-    homePage.clickIssuesButton()
-    issuesPage.clickShow50Issues()
-    issuesPage.issuesShow50Issues.should('be.visible')
+  it('Should increase list of defects shown on Issues page',  function()  {
+    HomePage.clickIssuesButton()
+    IssuesPage.clickShow50Issues()
+    IssuesPage.issuesShow50Issues.should('be.visible')
   })
-  it('Check project administarator profile',  function()  {
-    homePage.clickProjectsButton()
-    projectPage.clickRedmineProjectButton()
-    overviewPage.clickOnProjectAdministrator()
-    overviewPage.administratorPage.should('be.visible')
+  it('Should open project administrator page',  function()  {
+    HomePage.clickProjectsButton()
+    ProjectsPage.clickRedmineProjectButton()
+    OverviewPage.clickOnProjectAdministrator()
+    OverviewPage.administratorPage.should('be.visible')
   })
-  it('Сheck redmine plugin details',  function()  {
-    homePage.clickResourcesPluginsButton()
-    resourcesPage.ClickAnyPlugin()
-    resourcesPage.pluginDetails.should('be.visible')
+  it('Should open Redmine plugin details',  function()  {
+    HomePage.clickResourcesPluginsButton()
+    ResourcesPage.ClickAnyPlugin()
+    ResourcesPage.pluginDetails.should('be.visible')
   })
-  it('Check Changelog details by version',  function()  {
-    homePage.clickResourcesChangelogButton()
-    resourcesPage.ClickOnChangelog5series()
-    resourcesPage.changelogDetails.should('be.visible')
+  it('Should open changelog details by version',  function()  {
+    HomePage.clickResourcesChangelogButton()
+    ResourcesPage.ClickOnChangelog5series()
+    ResourcesPage.changelogDetails.should('be.visible')
   })
-  it('Сheck security vulnerability details',  function()  {
-    homePage.clickResourcesSecurityButton()
-    resourcesPage.securityVulnerabilityDetails.should('be.visible')
+  it('Should open security vulnerability details',  function()  {
+    HomePage.clickResourcesSecurityButton()
+    ResourcesPage.securityVulnerabilityDetails.should('be.visible')
   })
-  it('Check list of companies that uses redmine',  function()  {
+  it('Should open list of companies that uses Redmine',  function()  {
     cy.scrollTo('bottom')
-    homePage.clickCompaniesThatUseRedminePage()
-    common.whoUsesRedmine.should('be.visible')
+    HomePage.clickCompaniesThatUseRedminePage()
+    Common.whoUsesRedmine.should('be.visible')
   })
-  it('Check profile details of user that added news',  function()  {
-    homePage.clickNewsButton()
-    newsPage.clickAnyNews()
-    newsPage.clickUserThatAddNews()
-    common.profileDetailsPage.should('be.visible')
+  it('Should open profile page of user that add news',  function()  {
+    HomePage.clickNewsButton()
+    NewsPage.clickAnyNews()
+    NewsPage.clickUserThatAddNews()
+    Common.profileDetailsPage.should('be.visible')
   })
-  it('Check forum topic sorting',  function()  {
-    homePage.clickForumButton()
-    forumsPage.clickHelpTopic()
-    forumsPage.clickSortByDate()
-    forumsPage.forumsTopicsSorting.should('be.visible')
+  it('Should sort forums topic list',  function()  {
+    HomePage.clickForumButton()
+    ForumsPage.clickHelpTopic()
+    ForumsPage.clickSortByDate()
+    ForumsPage.forumsTopicsSorting.should('be.visible')
   })
-  it('Check forum issue details',  function()  {
-    homePage.clickForumButton()
-    forumsPage.clickHelpTopic()
-    forumsPage.clickUserIssue()
-    forumsPage.forumTopicsDetails.should('be.visible')
+  it('Should open forum issue details',  function()  {
+    HomePage.clickForumButton()
+    ForumsPage.clickHelpTopic()
+    ForumsPage.clickUserIssue()
+    ForumsPage.forumTopicsDetails.should('be.visible')
   }) 
-  it('Check issues page sorting',  function()  {
-    homePage.clickIssuesButton()
-    issuesPage.clickSortByDate()
-    issuesPage.issuesSorting.should('be.visible')
+  it('Should sort Issues page',  function()  {
+    HomePage.clickIssuesButton()
+    IssuesPage.clickSortByDate()
+    IssuesPage.issuesSorting.should('be.visible')
   })
-  it('Check roadmap filtration',  function()  {
-    homePage.clickRoadmapButton()
-    roadmapPage.uncheckDefectCheckbox()
-    roadmapPage.uncheckFeatureCheckbox()
-    roadmapPage.clickApplyButton()
-    roadmapPage.roadmapPatchesFiltration.should('be.visible')
+  it('Should filtrate Roadmap page',  function()  {
+    HomePage.clickRoadmapButton()
+    RoadmapPage.uncheckDefectCheckbox()
+    RoadmapPage.uncheckFeatureCheckbox()
+    RoadmapPage.clickApplyButton()
+    RoadmapPage.roadmapPatchesFiltration.should('be.visible')
   })
-  it('Check activity filtration',  function()  {
-    homePage.clickActivityButton()
-    activityPage.clickOnFilterByIssue()
-    activityPage.onlyIssuesShownCheck.should('be.visible')
+  it('Should filtrate Activity page',  function()  {
+    HomePage.clickActivityButton()
+    ActivityPage.clickOnFilterByIssue()
+    ActivityPage.onlyIssuesShown.should('be.visible')
   })
-  it('Check API guide',  function()  {
-    homePage.clickHelpButton()
-    helpPage.scrollToDeveloperGuide()
-    helpPage.clickRedmineRestApi()
-    common.clickApiIssuesGuide()
-    common.apiDetails.should('be.visible')
+  it('Should open API guide details',  function()  {
+    HomePage.clickHelpButton()
+    HelpPage.scrollToDeveloperGuide()
+    HelpPage.clickRedmineRestApi()
+    Common.clickApiIssuesGuide()
+    Common.apiDetails.should('be.visible')
   })
   
   //Negative testing
-  it('Register without data',  function()  {
-    homePage.clickRegisterButton()
-    regPage.clickSubmitButton()
-    regPage.error.should('be.visible')
+  it('Should show error, while registering without data',  function()  {
+    HomePage.clickRegisterButton()
+    RegisterPage.clickSubmitButton()
+    RegisterPage.error.should('be.visible')
   })
-  it('Register with incorrect email',  function()  {
-    homePage.clickRegisterButton()
-    regPage.fillEmail('someenails')
-    regPage.clickSubmitButton()
-    regPage.error.should('be.visible')
+  it('Should show error, while registering with incorrect email',  function()  {
+    HomePage.clickRegisterButton()
+    RegisterPage.fillEmail('someenails')
+    RegisterPage.clickSubmitButton()
+    RegisterPage.error.should('be.visible')
   }) 
 })

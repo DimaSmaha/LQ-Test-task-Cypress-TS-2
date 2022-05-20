@@ -4,23 +4,20 @@ import HomePage from '../pageobjects/home.page'
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
-const common = new Common();
-const homePage = new HomePage();
-
 beforeEach(() => {
-    common.GoToPage()
+    Common.GoToPage()
   })
 
-describe('Redmine test cases',  function()  {
+describe('Home page test cases',  function()  {
     //Positive testing
-    it('Buy redmine book',  function()  {
+    it('Should navigate to Redmine book product page',  function()  {
       cy.scrollTo('bottom')
-      homePage.bookImage.should('be.visible')
+      HomePage.bookImage.should('be.visible')
     })
     
-    it('Check list of companies that uses redmine',  function()  {
+    it('Should open list of companies that uses Redmine',  function()  {
       cy.scrollTo('bottom')
-      homePage.clickCompaniesThatUseRedminePage()
-      common.whoUsesRedmine.should('be.visible')
+      HomePage.clickCompaniesThatUseRedminePage()
+      Common.whoUsesRedmine.should('be.visible')
     })
   }) 
