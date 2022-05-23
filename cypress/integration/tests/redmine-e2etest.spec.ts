@@ -189,6 +189,12 @@ describe('All Redmine test cases',  function()  {
     Common.clickApiIssuesGuide()
     Common.apiDetails.should('be.visible')
   })
+  it('Should open difference between revisions versions',  function()  {
+    HomePage.clickRepoButton()
+    RepositoryPage.clickRadioButton()
+    RepositoryPage.clickViewDifferenceButton()
+    RepositoryPage.differenceBody.should('be.visible')
+  })
   
   //Negative testing
   it('Should show error, while registering without data',  function()  {

@@ -16,4 +16,4 @@ describe('Download page test cases',  function()  {
         DownloadPage.downloadRepository()
         DownloadPage.RedmineRepository.should('be.visible')
     })
-  }) 
+}) 
