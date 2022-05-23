@@ -1,6 +1,6 @@
-import Common from '../pageobjects/common.page'
-import HomePage from '../pageobjects/home.page'
-import ActivityPage from '../pageobjects/activity.page'
+import Common from '../../pageobjects/common.page'
+import HomePage from '../../pageobjects/home.page'
+import ActivityPage from '../../pageobjects/activity.page'
 
 /// <reference types="cypress" />
 const { describe } = require("mocha")
@@ -19,6 +19,6 @@ describe('Activity test cases',  function()  {
     it('Should filtrate Activity page',  function()  {
         HomePage.clickActivityButton()
         ActivityPage.clickOnFilterByIssue()
-        ActivityPage.onlyIssuesShown.should('be.visible')
+        ActivityPage.onlyIssuesShown.should('be.checked')
     })
 }) 

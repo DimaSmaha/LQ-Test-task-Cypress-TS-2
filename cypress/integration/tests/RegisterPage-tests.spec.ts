@@ -1,6 +1,6 @@
-import Common from '../pageobjects/common.page'
-import HomePage from '../pageobjects/home.page'
-import RegisterPage from '../pageobjects/register.page'
+import Common from '../../pageobjects/common.page'
+import HomePage from '../../pageobjects/home.page'
+import RegisterPage from '../../pageobjects/register.page'
 
 /// <reference types="cypress" />
 const { describe } = require("mocha")

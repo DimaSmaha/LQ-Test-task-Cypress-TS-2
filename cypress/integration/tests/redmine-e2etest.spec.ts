@@ -1,20 +1,20 @@
-import Common from '../pageobjects/Common.page'
-import HomePage from '../pageobjects/home.page'
-import RegisterPage from '../pageobjects/register.page'
-import LoginPage from '..//pageobjects/login.page'
-import ProjectsPage from '../pageobjects/projects.page'
-import HelpPage from '../pageobjects/help.page'
-import OverviewPage from '../pageobjects/overview.page'
-import DownloadPage from '../pageobjects/download.page'
-import ActivityPage from '../pageobjects/activity.page'
-import RoadmapPage from '../pageobjects/roadmap.page'
-import IssuesPage from '../pageobjects/issues.page'
-import NewIssuePage from '../pageobjects/newissue.page'
-import NewsPage from '../pageobjects/news.page'
-import ForumsPage from '../pageobjects/forums.page'
-import RepositoryPage from '../pageobjects/repository.page'
-import SearchResultPage from '../pageobjects/searchresults.page'
-import ResourcesPage from '../pageobjects/resources.page'
+import Common from '../../pageobjects/common.page'
+import HomePage from '../../pageobjects/home.page'
+import RegisterPage from '../../pageobjects/register.page'
+import LoginPage from '../../pageobjects/login.page'
+import ProjectsPage from '../../pageobjects/projects.page'
+import HelpPage from '../../pageobjects/help.page'
+import OverviewPage from '../../pageobjects/overview.page'
+import DownloadPage from '../../pageobjects/download.page'
+import ActivityPage from '../../pageobjects/activity.page'
+import RoadmapPage from '../../pageobjects/roadmap.page'
+import IssuesPage from '../../pageobjects/issues.page'
+import NewIssuePage from '../../pageobjects/newissue.page'
+import NewsPage from '../../pageobjects/news.page'
+import ForumsPage from '../../pageobjects/forums.page'
+import RepositoryPage from '../../pageobjects/repository.page'
+import SearchResultPage from '../../pageobjects/searchresults.page'
+import ResourcesPage from '../../pageobjects/resources.page'
 
 /// <reference types="cypress" />
 const { describe } = require("mocha")
@@ -27,7 +27,7 @@ describe('All Redmine test cases',  function()  {
   //Positive testing
   xit('Should register new account',  function()  {
     HomePage.clickRegisterButton()
-    RegisterPage.fillLogin('sonnerandom')
+    RegisterPage.fillLogin('someesrsandom')
     RegisterPage.fillPassword('qwerty')
     RegisterPage.fillPasswordConfirmation('qwerty')
     RegisterPage.fillFirstName('somename')
@@ -105,7 +105,7 @@ describe('All Redmine test cases',  function()  {
   it('Should filtrate search results',  function()  {
     HomePage.useSearchInput('defect{enter}')
     SearchResultPage.clickMessagesFilter()
-    SearchResultPage.searchFiltration.should('be.visible')
+    SearchResultPage.searchFiltration.should('be.checked')
   })
   it('Should navigate to Redmine book product page',  function()  {
     cy.scrollTo('bottom')
@@ -180,7 +180,7 @@ describe('All Redmine test cases',  function()  {
   it('Should filtrate Activity page',  function()  {
     HomePage.clickActivityButton()
     ActivityPage.clickOnFilterByIssue()
-    ActivityPage.onlyIssuesShown.should('be.visible')
+    ActivityPage.onlyIssuesShown.should('be.checked')
   })
   it('Should open API guide details',  function()  {
     HomePage.clickHelpButton()

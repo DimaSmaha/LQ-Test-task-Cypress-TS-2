@@ -1,6 +1,6 @@
-import Common from '../pageobjects/common.page'
-import HomePage from '../pageobjects/home.page'
-import SearchResultPage from '../pageobjects/searchresults.page'
+import Common from '../../pageobjects/common.page'
+import HomePage from '../../pageobjects/home.page'
+import SearchResultPage from '../../pageobjects/searchresults.page'
 
 /// <reference types="cypress" />
 const { describe } = require("mocha")
@@ -14,6 +14,6 @@ describe('Search page result test cases',  function()  {
     it('Should filtrate search results',  function()  {
         HomePage.useSearchInput('defect{enter}')
         SearchResultPage.clickMessagesFilter()
-        SearchResultPage.searchFiltration.should('be.visible')
+        SearchResultPage.searchFiltration.should('be.checked')
     })
 }) 
