@@ -27,5 +27,10 @@ describe('Issues page test cases',  function()  {
         HomePage.clickIssuesButton()
         IssuesPage.clickSortByDate()
         IssuesPage.issuesSorting.should('be.visible')
-      })
+    })
+    it('Should navigate to home page through "Home" button on the top',  function()  {
+        HomePage.clickIssuesButton()
+        Common.clickRedmineHomeUpperButton()
+        HomePage.bookImage.should('be.visible')
+    })
 }) 

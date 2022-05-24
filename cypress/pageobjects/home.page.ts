@@ -45,6 +45,16 @@ class HomePage{
     get ResourcesSecurityButton(){
      return cy.get('[class="wiki-page"]').contains('Security')
     }
+    get MyAccountButton(){
+        return cy.get('[class="my-account"]')
+    }
+    get MyPageButton(){
+        return cy.get('[class="my-page"]')
+    }
+    get SignOutButton(){
+        return cy.get('[class="logout"]')
+    }
+
 
     //methods for buttons
 
@@ -92,6 +102,15 @@ class HomePage{
     }
     clickResourcesSecurityButton(){
         this.ResourcesSecurityButton.click()
+    }
+    clickMyAccountButton(){
+        this.MyAccountButton.click()
+    }
+    clickMyPageButton(){
+        this.MyPageButton.click()
+    }
+    clickSignOutButton(){
+        this.SignOutButton.click()
     }
 
     //objects

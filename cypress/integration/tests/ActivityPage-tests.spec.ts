@@ -21,4 +21,8 @@ describe('Activity test cases',  function()  {
         ActivityPage.clickOnFilterByIssue()
         ActivityPage.onlyIssuesShown.should('be.checked')
     })
+    it('Should open page in Atom code',  function()  {
+        HomePage.clickActivityButton()
+        Common.AtomButton.should('be.visible')
+    })
 }) 

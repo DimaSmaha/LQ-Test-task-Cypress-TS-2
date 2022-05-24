@@ -13,6 +13,12 @@ class Common {
    get ApiIssuesGuide(){
       return cy.get('[class="wiki-page"]').contains("Issues")
    }
+   get AtomButton(){
+      return cy.get('[class="atom"]')
+   }
+   get RedmineHomeUpperButton(){
+      return cy.get('[class="home"]')
+   }
    
    //common methods
    clickDefectWord(){
@@ -21,7 +27,12 @@ class Common {
    clickApiIssuesGuide(){
       this.ApiIssuesGuide.click()
    }
-   
+   clickAtomButton(){
+      this.AtomButton.click()
+   }
+   clickRedmineHomeUpperButton(){
+      this.RedmineHomeUpperButton.click()
+   }
    //common checks
    get defectDetails(){
       return cy.get('[class="description"]')
@@ -34,6 +45,15 @@ class Common {
    }
    get whoUsesRedmine(){
       return cy.get('[src="/attachments/download/7657/logos.png"]')
+   }
+   get MyAccountDetails(){
+      return cy.get('[class="icon icon-passwd"]')
+   }
+   get MyPageDetails(){
+      return cy.get('[id="content"]')
+   }
+   get AtomCode(){
+      return cy.contains('<?xml version="1.0" encoding="UTF-8"?>')
    }
    
 

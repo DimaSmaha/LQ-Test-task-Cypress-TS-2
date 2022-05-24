@@ -23,5 +23,20 @@ describe('Repository page test cases',  function()  {
         RepositoryPage.clickViewDifferenceButton()
         RepositoryPage.differenceBody.should('be.visible')
     })
+    it('Should find existing repository version',  function()  {
+        HomePage.clickRepoButton()
+        RepositoryPage.searchRevision('18000{enter}')
+        RepositoryPage.revision18000.should('be.visible')
+    })
+    it('Should open revision list',  function()  {
+        HomePage.clickRepoButton()
+        RepositoryPage.clickRevisionListButton()
+        RepositoryPage.revisionListPagination.should('be.visible')
+    })
+    it('Should show error, while entering wrong repository version',  function()  {
+        HomePage.clickRepoButton()
+        RepositoryPage.searchRevision('55555{enter}')
+        RepositoryPage.searchError.should('be.visible')
+    })
 
 }) 

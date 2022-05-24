@@ -7,6 +7,12 @@ class RepositoryPage{
     get viewDifferencesButton(){
         return cy.get('[type="submit"]')
     }
+    get revisionSearchInput(){
+        return cy.get('[id="rev"]')
+    }
+    get revisionListButton(){
+        return cy.get('[href="/projects/redmine/repository/revisions"]')
+    }
 
     //methods
     clickRadioButton(){
@@ -15,6 +21,12 @@ class RepositoryPage{
     clickViewDifferenceButton(){
         this.viewDifferencesButton.click()
     }
+    searchRevision(input:string){
+        this.revisionSearchInput.click().type(input)
+    }
+    clickRevisionListButton(){
+        this.revisionListButton.click()
+    }
 
     //checks
     get repositoryPage(){
@@ -22,6 +34,15 @@ class RepositoryPage{
     }
     get differenceBody(){
         return cy.get('[class="autoscroll"]')
+    }
+    get revision18000(){
+        return cy.get('[href="/projects/redmine/repository/revisions/18000"]')
+    }
+    get revisionListPagination(){
+        return cy.get('[class="pagination"]')
+    }
+    get searchError(){
+        return cy.get('[id="errorExplanation"]')
     }
     
 }

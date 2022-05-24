@@ -195,6 +195,43 @@ describe('All Redmine test cases',  function()  {
     RepositoryPage.clickViewDifferenceButton()
     RepositoryPage.differenceBody.should('be.visible')
   })
+  it('Should open your account details',  function()  {
+    HomePage.clickLoginButton()
+    LoginPage.logIntoAccount('babalen','qwerty')
+    HomePage.clickMyAccountButton()
+    Common.MyAccountDetails.should('be.visible')
+  })
+  it('Should sign out from account',  function()  {
+    HomePage.clickLoginButton()
+    LoginPage.logIntoAccount('babalen','qwerty')
+    HomePage.clickSignOutButton()
+    HomePage.LoginButton.should('be.visible')
+  })
+  it('Should find existing repository version',  function()  {
+    HomePage.clickRepoButton()
+    RepositoryPage.searchRevision('18000{enter}')
+    RepositoryPage.revision18000.should('be.visible')
+  })
+  it('Should open page in Atom code',  function()  {
+    HomePage.clickActivityButton()
+    Common.AtomButton.should('be.visible')
+  })
+  it('Should open your account statistics',  function()  {
+    HomePage.clickLoginButton()
+    LoginPage.logIntoAccount('babalen','qwerty')
+    HomePage.clickMyPageButton()
+    Common.MyPageDetails.should('be.visible')
+  })
+  it('Should navigate to home page through "Home" button on the top',  function()  {
+    HomePage.clickIssuesButton()
+    Common.clickRedmineHomeUpperButton()
+    HomePage.bookImage.should('be.visible')
+  })
+  it('Should open revision list',  function()  {
+    HomePage.clickRepoButton()
+    RepositoryPage.clickRevisionListButton()
+    RepositoryPage.revisionListPagination.should('be.visible')
+  })
   
   //Negative testing
   it('Should show error, while registering without data',  function()  {
@@ -208,4 +245,9 @@ describe('All Redmine test cases',  function()  {
     RegisterPage.clickSubmitButton()
     RegisterPage.error.should('be.visible')
   }) 
+  it('Should show error, while entering wrong repository version',  function()  {
+    HomePage.clickRepoButton()
+    RepositoryPage.searchRevision('55555{enter}')
+    RepositoryPage.searchError.should('be.visible')
+  })
 })
