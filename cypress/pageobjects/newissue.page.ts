@@ -1,4 +1,6 @@
-class NewIssuePage{
+import HomePage from "./home.page"
+
+class NewIssuePage extends HomePage{
     //objects
     get issueSubject(){
         return cy.get('[id="issue_subject"]')
@@ -8,6 +10,9 @@ class NewIssuePage{
     }
     get previewButton(){
         return cy.get('[accesskey="r"]')
+    }
+    get issuePreview(){
+        return cy.get('[class="preview"]')
     }
     //methods
     fillIssueSubject(subject: string){
@@ -25,10 +30,6 @@ class NewIssuePage{
         this.clickPreviewButton()
     }
 
-    get issuePreview(){
-        return cy.get('[class="preview"]')
-    }
-    
    
 }
-export default new NewIssuePage();
+export default NewIssuePage;

@@ -1,10 +1,4 @@
 class Common {
-
-   //methods
-   GoToPage(){
-      cy.viewport(1500,660)
-      cy.visit('https://www.redmine.org/')
-   }
    
    //objects
    get defectWord(){
@@ -18,20 +12,6 @@ class Common {
    }
    get RedmineHomeUpperButton(){
       return cy.get('[class="home"]')
-   }
-   
-   //common methods
-   clickDefectWord(){
-     this.defectWord.click()
-   }
-   clickApiIssuesGuide(){
-      this.ApiIssuesGuide.click()
-   }
-   clickAtomButton(){
-      this.AtomButton.click()
-   }
-   clickRedmineHomeUpperButton(){
-      this.RedmineHomeUpperButton.click()
    }
    //common checks
    get defectDetails(){
@@ -55,8 +35,24 @@ class Common {
    get AtomCode(){
       return cy.contains('<?xml version="1.0" encoding="UTF-8"?>')
    }
+   //common methods
+   GoToHomePage(){
+      cy.viewport(1500,660)
+      cy.visit('https://www.redmine.org/')
+   }
+   clickDefectWord(){
+     this.defectWord.click()
+   }
+   clickApiIssuesGuide(){
+      this.ApiIssuesGuide.click()
+   }
+   clickAtomButton(){
+      this.AtomButton.click()
+   }
+   clickRedmineHomeUpperButton(){
+      this.RedmineHomeUpperButton.click()
+   }
    
-
  }
             
-export default new Common();
+export default Common;

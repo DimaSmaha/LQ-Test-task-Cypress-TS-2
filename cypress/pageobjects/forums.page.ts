@@ -1,4 +1,6 @@
-class ForumsPage{
+import HomePage from "./home.page"
+
+class ForumsPage extends HomePage{
 
     //objects
     get HelpTopic(){
@@ -10,18 +12,6 @@ class ForumsPage{
     get UserIssue(){
         return cy.get('[href="/boards/2/topics/667"]')
     }
-
-    //methods
-    clickHelpTopic(){
-       this.HelpTopic.click()
-    }
-    clickSortByDate(){
-        this.SortByDate.click()
-     }
-    clickUserIssue(){
-        this.UserIssue.click()
-    }
-
     //checks
     get forumsHelpTopic(){
         return cy.get('[class="subtitle"]')
@@ -32,6 +22,16 @@ class ForumsPage{
     get forumTopicsDetails(){
         return cy.get('[class="message"]')
     }
+    //methods
+    clickHelpTopic(){
+       this.HelpTopic.click()
+    }
+    clickSortByDate(){
+        this.SortByDate.click()
+     }
+    clickUserIssue(){
+        this.UserIssue.click()
+    }
    
 }
-export default new ForumsPage();
+export default ForumsPage;

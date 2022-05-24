@@ -1,4 +1,6 @@
-class RepositoryPage{
+import HomePage from "./home.page"
+
+class RepositoryPage extends HomePage{
     
     //objects
     get radioButton(){
@@ -13,21 +15,6 @@ class RepositoryPage{
     get revisionListButton(){
         return cy.get('[href="/projects/redmine/repository/revisions"]')
     }
-
-    //methods
-    clickRadioButton(){
-        this.radioButton.click()
-    }
-    clickViewDifferenceButton(){
-        this.viewDifferencesButton.click()
-    }
-    searchRevision(input:string){
-        this.revisionSearchInput.click().type(input)
-    }
-    clickRevisionListButton(){
-        this.revisionListButton.click()
-    }
-
     //checks
     get repositoryPage(){
         return cy.get('[href="/projects/redmine/repository"]')
@@ -44,6 +31,19 @@ class RepositoryPage{
     get searchError(){
         return cy.get('[id="errorExplanation"]')
     }
+    //methods
+    clickRadioButton(){
+        this.radioButton.click()
+    }
+    clickViewDifferenceButton(){
+        this.viewDifferencesButton.click()
+    }
+    searchRevision(input:string){
+        this.revisionSearchInput.click().type(input)
+    }
+    clickRevisionListButton(){
+        this.revisionListButton.click()
+    }
     
 }
-export default new RepositoryPage();
+export default RepositoryPage;

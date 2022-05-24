@@ -1,6 +1,7 @@
-class LoginPage{
-    //tc1
-    //objects
+import HomePage from "./home.page"
+
+class LoginPage extends HomePage{
+    //objects tc1
     get usernameInput(){
         return cy.get('[id="username"]')
     }
@@ -10,7 +11,26 @@ class LoginPage{
     get loginButton(){
         return cy.get('[name="login"]')
     }
-    //methods
+    //objects tc2
+    get lostPasswordBtn(){
+        return cy.get('[href="/account/lost_password"]')
+    }
+    get lostPasswordEmailInput(){
+        return cy.get('[id="mail"]')
+    }
+    get lostPasswordSubmitBtn(){
+        return cy.get('[name="commit"]')
+    }
+    //checks tc1
+    get LoggedAsCheck(){
+    return cy.get('[id="loggedas"]')
+    }
+   //checks tc2
+    get successfulRecoverPasswordNoticeCheck(){
+    return cy.get('[id="flash_notice"]')
+    }
+
+    //methods tc1
     fillUsername(username: string){
         this.usernameInput.type(username)
     }
@@ -21,27 +41,12 @@ class LoginPage{
         this.loginButton.click()
     }
     logIntoAccount(username:string, password:string){
+        super.clickSignInButton()
         this.fillUsername(username);
         this.fillPassword(password);
         this.clickLoginButton()
     }
-    //checks
-    get LoggedAsCheck(){
-        return cy.get('[id="loggedas"]')
-    }
-
-    //tc2
-    //objects
-    get lostPasswordBtn(){
-        return cy.get('[href="/account/lost_password"]')
-    }
-    get lostPasswordEmailInput(){
-        return cy.get('[id="mail"]')
-    }
-    get lostPasswordSubmitBtn(){
-        return cy.get('[name="commit"]')
-    }
-    //methods to interract
+    //methods tc2
     clickLostPasswordBtn(){
         this.lostPasswordBtn.click()
     }
@@ -57,9 +62,5 @@ class LoginPage{
         this.clickLostPasswordSubmitBtn()
     } 
 
-   //checks
-    get successfulRecoverPasswordNoticeCheck(){
-    return cy.get('[id="flash_notice"]')
-    }
 }
-    export default new LoginPage();
+    export default LoginPage;

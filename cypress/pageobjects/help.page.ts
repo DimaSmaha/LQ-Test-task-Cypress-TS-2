@@ -1,4 +1,6 @@
-class HelpPage{
+import HomePage from "./home.page"
+
+class HelpPage extends HomePage{
    
     //objects
     get navigateToTranslation(){
@@ -13,7 +15,13 @@ class HelpPage{
     get RedmineRestApi(){
         return cy.get('[href="/projects/redmine/wiki/Rest_api"]')
     }
-
+    //checks
+    get redmineGuideTranslation(){
+        return cy.get('[class="toc right"]')
+    }
+    get apiDetails(){
+        return cy.get('[class="toc right"]')
+    }
     //methods
     clickNavigateToTranslation(){
         this.navigateToTranslation.click()
@@ -27,14 +35,6 @@ class HelpPage{
     clickRedmineRestApi(){
         this.RedmineRestApi.click()
     }
-  
 
-    //checks
-    get redmineGuideTranslation(){
-        return cy.get('[class="toc right"]')
-    }
-    get apiDetails(){
-        return cy.get('[class="toc right"]')
-    }
 }
-export default new HelpPage();
+export default HelpPage;

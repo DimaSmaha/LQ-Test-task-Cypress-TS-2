@@ -1,19 +1,18 @@
-import Common from '../../pageobjects/common.page'
-import HomePage from '../../pageobjects/home.page'
 import DownloadPage from '../../pageobjects/download.page'
+const downloadPage = new DownloadPage();
 
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
 beforeEach(() => {
-    Common.GoToPage()
+    downloadPage.GoToHomePage()
   })
 
 describe('Download page test cases',  function()  {
     //Positive testing
     xit('Should download redmine repository',  function()  {
-        HomePage.clickRepoVersionButton()
-        DownloadPage.downloadRepository()
-        DownloadPage.RedmineRepository.should('be.visible')
+        downloadPage.clickRepoVersionButton()
+        downloadPage.downloadRepository()
+        downloadPage.RedmineRepository.should('be.visible')
     })
 }) 

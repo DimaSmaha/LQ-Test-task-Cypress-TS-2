@@ -1,4 +1,6 @@
-class NewsPage{
+import HomePage from "./home.page"
+
+class NewsPage extends HomePage{
     
     //objects
     get anyNews(){
@@ -7,7 +9,10 @@ class NewsPage{
     get userThatAddNews(){
         return cy.get('span [class="user active"]')
     }
-
+    //checks
+    get newsDetails(){
+        return cy.get('[class="comments"]')
+    }
     //methods
     clickAnyNews(){
         this.anyNews.click()
@@ -16,11 +21,6 @@ class NewsPage{
         this.userThatAddNews.click()
     }
 
-    //checks
-    get newsDetails(){
-        return cy.get('[class="comments"]')
-    }
-    
    
 }
-export default new NewsPage();
+export default NewsPage;

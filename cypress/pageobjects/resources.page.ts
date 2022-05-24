@@ -1,5 +1,6 @@
+import HomePage from "./home.page"
 
-class ResourcesPage{
+class ResourcesPage extends HomePage{
 
     //objects
     get anyPlugin(){
@@ -10,8 +11,14 @@ class ResourcesPage{
     }
     get securityVulnerabilityDetails(){
         return cy.get('[class="external"]').contains('CVE')
+    } 
+    //checks
+    get pluginDetails(){
+        return cy.get('[class="info"]')
     }
-    
+    get changelogDetails(){
+        return cy.get('[class="version"]').eq(0)
+    }
     //methods
     ClickAnyPlugin(){
         this.anyPlugin.click()
@@ -19,14 +26,7 @@ class ResourcesPage{
     ClickOnChangelog5series(){
         this.changelog5series.click()
     }
-   
-    //checks
-    get pluginDetails(){
-    return cy.get('[class="info"]')
-    }
-    get changelogDetails(){
-    return cy.get('[class="version"]').eq(0)
-    }
+
 
 }
-export default new ResourcesPage();
+export default ResourcesPage;

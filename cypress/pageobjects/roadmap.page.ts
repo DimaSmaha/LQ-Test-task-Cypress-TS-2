@@ -1,4 +1,6 @@
-class RoadmapPage{
+import HomePage from "./home.page"
+
+class RoadmapPage extends HomePage{
     //objects
     get ImplementationVersion(){
         return cy.get('[name="5.1.0"]')
@@ -15,6 +17,14 @@ class RoadmapPage{
     get ApplyButton(){
         return cy.get('[class="button-small"]')
     }
+    //checks
+    get roadmapDetails(){
+        return cy.get('[class="progress-info"]')
+    }
+    get roadmapPatchesFiltration(){
+        return cy.contains("Patch #")
+    }
+    
     //methods
     clickImplementationVersion(){
         this.ImplementationVersion.click()
@@ -32,15 +42,5 @@ class RoadmapPage{
         this.ApplyButton.click()
     }
 
-
-
-    //checks
-    get roadmapDetails(){
-        return cy.get('[class="progress-info"]')
-    }
-    get roadmapPatchesFiltration(){
-        return cy.contains("Patch #")
-    }
-    
 }
-export default new RoadmapPage();
+export default RoadmapPage;

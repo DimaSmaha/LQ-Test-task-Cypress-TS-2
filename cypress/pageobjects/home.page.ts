@@ -1,6 +1,8 @@
-class HomePage{
+import Common from "./common.page"
+
+class HomePage extends Common{
     //buttons
-    get LoginButton(){
+    get SignInButton(){
      return cy.get('[class="login"]')
     }
     get ProjectsButton(){
@@ -54,12 +56,20 @@ class HomePage{
     get SignOutButton(){
         return cy.get('[class="logout"]')
     }
-
-
+    //objects
+    get SearchInput(){
+        return cy.get('[class="small"]')
+    }
+    get CompaniesThatUseRedminePage(){
+        return cy.get('[class="wiki-page"]').contains("This page lists")
+    }
+    //checks
+    get bookImage(){
+        return cy.get ('[src="/attachments/download/14647/redmine_cookbook.png"]')
+    }
     //methods for buttons
-
-    clickLoginButton(){
-       this.LoginButton.click()
+    clickSignInButton(){
+       this.SignInButton.click()
     }
     clickProjectsButton(){
         this.ProjectsButton.click()
@@ -112,16 +122,7 @@ class HomePage{
     clickSignOutButton(){
         this.SignOutButton.click()
     }
-
-    //objects
-    get SearchInput(){
-        return cy.get('[class="small"]')
-    }
-    get CompaniesThatUseRedminePage(){
-        return cy.get('[class="wiki-page"]').contains("This page lists")
-    }
-
-    // methods
+    //other methods
     useSearchInput(input:string){
         this.SearchInput.click().type(input)
     }
@@ -129,14 +130,7 @@ class HomePage{
         this.CompaniesThatUseRedminePage.click()
     }
 
-    //checks
-    get bookImage(){
-        return cy.get ('[src="/attachments/download/14647/redmine_cookbook.png"]')
-    }
-
-    
-
 }
-export default new HomePage();
+export default HomePage;
 
 

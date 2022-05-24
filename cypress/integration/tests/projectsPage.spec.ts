@@ -1,19 +1,18 @@
-import Common from '../../pageobjects/common.page'
-import HomePage from '../../pageobjects/home.page'
 import ProjectsPage from '../../pageobjects/projects.page'
+const projectsPage = new ProjectsPage();
 
 /// <reference types="cypress" />
 const { describe } = require("mocha")
 
 beforeEach(() => {
-    Common.GoToPage()
+    projectsPage.GoToHomePage()
   })
 
 describe('Projects page test cases',  function()  {
     //Positive testing
     it('Should open available project overview',  function()  {
-      HomePage.clickProjectsButton()
-      ProjectsPage.clickRedmineProjectButton()
-      ProjectsPage.redmineProject.should('be.visible')
+      projectsPage.clickProjectsButton()
+      projectsPage.clickRedmineProjectButton()
+      projectsPage.redmineProject.should('be.visible')
     })
 }) 
