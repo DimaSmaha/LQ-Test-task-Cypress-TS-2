@@ -1,4 +1,4 @@
-import SearchResultPage from '../../pageobjects/searchresults.page'
+import SearchResultPage from '../../pageobjects/searchResults.page'
 const searchResultPage = new SearchResultPage();
 
 /// <reference types="cypress" />

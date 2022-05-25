@@ -1,5 +1,5 @@
 import LoginPage from '../../pageobjects/login.page'
-import NewIssuePage from '../../pageobjects/newissue.page'
+import NewIssuePage from '../../pageobjects/newIssue.page'
 const loginPage = new LoginPage();
 const newIssuePage = new NewIssuePage();
 

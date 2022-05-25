@@ -13,7 +13,7 @@ describe('Issues page test cases',  function()  {
     it('Should filtrate Issues page',  function()  {
         issuesPage.clickIssuesButton()
         issuesPage.addTrackerFilter('tracker_id')
-        issuesPage.chooseTrackerFilter('2')
+        issuesPage.chooseFeatureFilter('2')
         issuesPage.clickApplyButton()
         issuesPage.issuesFeatureFiltration.should('be.visible')
     })

@@ -8,11 +8,11 @@ import DownloadPage from '../../pageobjects/download.page'
 import ActivityPage from '../../pageobjects/activity.page'
 import RoadmapPage from '../../pageobjects/roadmap.page'
 import IssuesPage from '../../pageobjects/issues.page'
-import NewIssuePage from '../../pageobjects/newissue.page'
+import NewIssuePage from '../../pageobjects/newIssue.page'
 import NewsPage from '../../pageobjects/news.page'
 import ForumsPage from '../../pageobjects/forums.page'
 import RepositoryPage from '../../pageobjects/repository.page'
-import SearchResultPage from '../../pageobjects/searchresults.page'
+import SearchResultPage from '../../pageobjects/searchResults.page'
 import ResourcesPage from '../../pageobjects/resources.page'
 
 /// <reference types="cypress" />
@@ -87,7 +87,7 @@ describe('All Redmine test cases',  function()  {
   it('Should filtrate Issues page',  function()  {
     issuesPage.clickIssuesButton()
     issuesPage.addTrackerFilter('tracker_id')
-    issuesPage.chooseTrackerFilter('2')
+    issuesPage.chooseFeatureFilter('2')
     issuesPage.clickApplyButton()
     issuesPage.issuesFeatureFiltration.should('be.visible')
   })
