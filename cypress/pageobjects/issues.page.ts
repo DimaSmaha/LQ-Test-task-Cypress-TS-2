@@ -32,7 +32,7 @@ class IssuesPage extends HomePage{
     addTrackerFilter(filter:string){
         this.Filter.select(filter)
     }
-    chooseFeatureFilter(filter:string){
+    chooseFilter(filter:string){
         this.TrackerFilter.select(filter)
     }
     clickApplyButton(){

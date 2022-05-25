@@ -87,7 +87,7 @@ describe('All Redmine test cases',  function()  {
   it('Should filtrate Issues page',  function()  {
     issuesPage.clickIssuesButton()
     issuesPage.addTrackerFilter('tracker_id')
-    issuesPage.chooseFeatureFilter('Feature')
+    issuesPage.chooseFilter('Feature')
     issuesPage.clickApplyButton()
     issuesPage.issuesFeatureFiltration.should('be.visible')
   })
