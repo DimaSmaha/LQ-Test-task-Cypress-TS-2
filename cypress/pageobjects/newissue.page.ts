@@ -14,7 +14,7 @@ class NewIssuePage extends HomePage{
     get issuePreview(){
         return cy.get('[class="preview"]')
     }
-    //methods
+    ///methods
     fillIssueSubject(subject: string){
         this.issueSubject.type(subject)
     }

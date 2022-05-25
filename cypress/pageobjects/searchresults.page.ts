@@ -10,7 +10,7 @@ class SearchResultPage extends HomePage{
     get searchFiltration(){
         return cy.get('[id="messages"][checked="checked"]')
     }
-    //objects
+    ///objects
     clickMessagesFilter(){
        this.MessagesFilter.click()
     }
