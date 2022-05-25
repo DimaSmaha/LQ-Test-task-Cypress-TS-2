@@ -12,7 +12,6 @@ beforeEach(() => {
 describe('Download page test cases',  function()  {
     //Positive testing (Test is not implemented yet)
     it('Should download redmine repository',  function()  {
-        downloadPage.downloadRepository()
         downloadPage.RedmineRepository.should('be.visible')
     })
 }) 
