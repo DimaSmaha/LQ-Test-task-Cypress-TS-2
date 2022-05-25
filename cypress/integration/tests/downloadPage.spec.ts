@@ -6,12 +6,12 @@ const { describe } = require("mocha")
 
 beforeEach(() => {
     downloadPage.GoToHomePage()
+    downloadPage.clickDownloadButton()
   })
 
 describe('Download page test cases',  function()  {
     //Positive testing (Test is not implemented yet)
-    xit('Should download redmine repository',  function()  {
-        downloadPage.clickDownloadButton()
+    it('Should download redmine repository',  function()  {
         downloadPage.downloadRepository()
         downloadPage.RedmineRepository.should('be.visible')
     })

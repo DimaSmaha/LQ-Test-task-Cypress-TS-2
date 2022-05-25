@@ -14,5 +14,5 @@ describe('Projects page test cases',  function()  {
     it('Should open available project overview',  function()  {
       projectsPage.clickRedmineProjectButton()
       projectsPage.redmineProject.should('be.visible')
-    })
+  })
 }) 

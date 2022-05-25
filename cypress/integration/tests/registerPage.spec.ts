@@ -6,12 +6,12 @@ const { describe } = require("mocha")
 
 beforeEach(() => {
     registerPage.GoToHomePage()
+    registerPage.clickRegisterButton()
   })
 
 describe('Register page test cases',  function()  {
     //Positive testing
   it('Should register new account',  function()  {
-    registerPage.clickRegisterButton()
     registerPage.fillLogin(registerPage.generateRandomLogin())
     registerPage.fillPassword('qwerty')
     registerPage.fillPasswordConfirmation('qwerty')
@@ -23,12 +23,10 @@ describe('Register page test cases',  function()  {
   })
   //Negative testing
   it('Should show error, while registering without data',  function()  {
-    registerPage.clickRegisterButton()
     registerPage.clickSubmitButton()
     registerPage.error.should('be.visible')
   })
   it('Should show error, while registering with incorrect email',  function()  {
-    registerPage.clickRegisterButton()
     registerPage.fillEmail('someemails')
     registerPage.clickSubmitButton()
     registerPage.error.should('be.visible')
