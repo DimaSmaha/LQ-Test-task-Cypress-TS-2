@@ -91,7 +91,7 @@ describe('All Redmine test cases',  function()  {
     issuesPage.clickApplyButton()
     issuesPage.issuesFeatureFiltration.should('be.visible')
   })
-  //
+  ///
   it('Should open news details',  function()  {
     newsPage.clickNewsButton()
     newsPage.clickAnyNews()
