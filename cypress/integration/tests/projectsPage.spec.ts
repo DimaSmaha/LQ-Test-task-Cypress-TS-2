@@ -6,12 +6,12 @@ const { describe } = require("mocha")
 
 beforeEach(() => {
     projectsPage.GoToHomePage()
+    projectsPage.clickProjectsButton()
   })
 
 describe('Projects page test cases',  function()  {
     //Positive testing
     it('Should open available project overview',  function()  {
-      projectsPage.clickProjectsButton()
       projectsPage.clickRedmineProjectButton()
       projectsPage.redmineProject.should('be.visible')
     })

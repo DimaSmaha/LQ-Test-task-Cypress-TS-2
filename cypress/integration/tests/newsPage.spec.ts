@@ -6,17 +6,16 @@ const { describe } = require("mocha")
 
 beforeEach(() => {
     newsPage.GoToHomePage()
+    newsPage.clickNewsButton()
   })
 
 describe('News page test cases',  function()  {
     //Positive testing
     it('Should open news details',  function()  {
-        newsPage.clickNewsButton()
         newsPage.clickAnyNews()
         newsPage.newsDetails.should('be.visible')
     })
     it('Should open profile page of user that add news',  function()  {
-        newsPage.clickNewsButton()
         newsPage.clickAnyNews()
         newsPage.clickUserThatAddNews()
         newsPage.profileDetailsPage.should('be.visible')

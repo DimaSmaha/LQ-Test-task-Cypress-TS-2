@@ -12,12 +12,12 @@ describe('Register page test cases',  function()  {
     //Positive testing
   it('Should register new account',  function()  {
     registerPage.clickRegisterButton()
-    registerPage.fillLogin('sonnerandom')
+    registerPage.fillLogin(registerPage.generateRandomLogin())
     registerPage.fillPassword('qwerty')
     registerPage.fillPasswordConfirmation('qwerty')
     registerPage.fillFirstName('somename')
     registerPage.fillLastName('somelastname')
-    registerPage.fillEmail('soeveryrandommail@gmail.com')
+    registerPage.fillEmail(registerPage.generateRandomLogin()+"@gmail.com")
     registerPage.clickSubmitButton()
     registerPage.successfulRegistration.should('be.visible')
   })
@@ -29,7 +29,7 @@ describe('Register page test cases',  function()  {
   })
   it('Should show error, while registering with incorrect email',  function()  {
     registerPage.clickRegisterButton()
-    registerPage.fillEmail('someenails')
+    registerPage.fillEmail('someemails')
     registerPage.clickSubmitButton()
     registerPage.error.should('be.visible')
   })   

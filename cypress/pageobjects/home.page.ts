@@ -11,8 +11,8 @@ class HomePage extends Common{
     get RegisterButton(){
      return cy.get('[class="register"]')
     }
-    get RepoVersionButton(){
-     return cy.get('[href="/projects/redmine/wiki/Download"]')
+    get DownloadButton(){
+     return cy.get('[class="download"]')
     }
     get ActivityButton(){
      return cy.get('[class="activity"]')
@@ -77,8 +77,8 @@ class HomePage extends Common{
     clickRegisterButton(){
         this.RegisterButton.click()
     }
-    clickRepoVersionButton(){
-        this.RepoVersionButton.click()
+    clickDownloadButton(){
+        this.DownloadButton.click()
     }
     clickActivityButton(){
         this.ActivityButton.click()

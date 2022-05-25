@@ -9,9 +9,9 @@ beforeEach(() => {
   })
 
 describe('Download page test cases',  function()  {
-    //Positive testing
+    //Positive testing (Test is not implemented yet)
     xit('Should download redmine repository',  function()  {
-        downloadPage.clickRepoVersionButton()
+        downloadPage.clickDownloadButton()
         downloadPage.downloadRepository()
         downloadPage.RedmineRepository.should('be.visible')
     })

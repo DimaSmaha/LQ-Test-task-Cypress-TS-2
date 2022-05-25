@@ -8,15 +8,13 @@ const { describe } = require("mocha")
 
 beforeEach(() => {
   newIssuePage.GoToHomePage()
+  loginPage.logIntoAccount('babalen','qwerty')
+  newIssuePage.clickNewIssueButton()
   })
 
 describe('New issues page test cases',  function()  {
-    beforeEach(() => {
-    loginPage.logIntoAccount('babalen','qwerty')
-    })
     //Positive testing
     it('Should add new issue',  function()  {
-      newIssuePage.clickNewIssueButton()
       newIssuePage.makeNewIssue('something bad happened','something very bad happened')
       newIssuePage.issuePreview.should('be.visible')
     })

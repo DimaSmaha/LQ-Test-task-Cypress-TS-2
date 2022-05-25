@@ -2,16 +2,12 @@ import HomePage from "./home.page";
 
 class DownloadPage extends HomePage{
     //objects
-    get repository(){
-        return cy.get('[href="/releases/redmine-5.0.0.zip"]')
-    }
-    //checks
     get RedmineRepository(){
-        return cy.get('[href="/releases/redmine-5.0.0.zip"]')
+        return cy.contains('redmine-5.0.1.zip')
     }
    //methods
     downloadRepository(){
-        this.repository.click()
+        this.RedmineRepository.click()
     }
 
 }

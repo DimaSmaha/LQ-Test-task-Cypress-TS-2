@@ -6,23 +6,21 @@ const { describe } = require("mocha")
 
 beforeEach(() => {
     roadmapPage.GoToHomePage()
+    roadmapPage.clickRoadmapButton()
   })
 
 describe('Roadmap page test cases',  function()  {
     //Positive testing
     it('Should open version implementation details',  function()  {
-        roadmapPage.clickRoadmapButton()
         roadmapPage.clickImplementationVersion()
         roadmapPage.roadmapDetails.should('be.visible')
     })
     it('Should open defect details thorough roadmap page',  function()  {
-        roadmapPage.clickRoadmapButton()
         roadmapPage.clickImplementationVersion()
         roadmapPage.clickDefectWord()
         roadmapPage.defectDetails.should('be.visible')
     })
     it('Should filtrate Roadmap page',  function()  {
-        roadmapPage.clickRoadmapButton()
         roadmapPage.uncheckDefectCheckbox()
         roadmapPage.uncheckFeatureCheckbox()
         roadmapPage.clickApplyButton()

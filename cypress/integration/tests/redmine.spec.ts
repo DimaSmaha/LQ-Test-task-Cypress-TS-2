@@ -41,14 +41,14 @@ beforeEach(() => {
 
 describe('All Redmine test cases',  function()  {
   //Positive testing
-  xit('Should register new account',  function()  {
+  it('Should register new account',  function()  {
     registerPage.clickRegisterButton()
-    registerPage.fillLogin('someesrsandom')
+    registerPage.fillLogin(registerPage.generateRandomLogin())
     registerPage.fillPassword('qwerty')
     registerPage.fillPasswordConfirmation('qwerty')
     registerPage.fillFirstName('somename')
     registerPage.fillLastName('somelastname')
-    registerPage.fillEmail('soeveryrandommail@gmail.com')
+    registerPage.fillEmail(registerPage.generateRandomLogin()+"@gmail.com")
     registerPage.clickSubmitButton()
     registerPage.successfulRegistration.should('be.visible')
   })
@@ -64,8 +64,9 @@ describe('All Redmine test cases',  function()  {
     loginPage.lostPasswordRecover('babalen253@cupbest.com')
     loginPage.successfulRecoverPasswordNoticeCheck.should('be.visible')
   })
+  //(Test is not implemented yet)
   xit('Should download redmine repository',  function()  {
-    downloadPage.clickRepoVersionButton()
+    downloadPage.clickDownloadButton()
     downloadPage.downloadRepository()
     downloadPage.RedmineRepository.should('be.visible')
   })
