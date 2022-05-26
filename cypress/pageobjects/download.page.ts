@@ -7,7 +7,7 @@ class DownloadPage extends HomePage{
     }
    //methods
     downloadRepository(){
-        this.RedmineRepository.click()
+        this.RedmineRepository.trigger('click')
     }
 
 }

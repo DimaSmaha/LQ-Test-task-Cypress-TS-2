@@ -65,8 +65,9 @@ describe('All Redmine test cases',  function()  {
     loginPage.successfulRecoverPasswordNoticeCheck.should('be.visible')
   })
   //(Test is not implemented yet)
-  xit('Should download redmine repository',  function()  {
+  it('Should download redmine repository',  function()  {
     downloadPage.clickDownloadButton()
+    downloadPage.downloadRepository()
     downloadPage.RedmineRepository.should('be.visible')
   })
   it('Should open available project overview',  function()  {
